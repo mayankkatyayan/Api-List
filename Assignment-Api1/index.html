@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="slide" id="loginSlide">
+        <h1>Login</h1>
+        <form id="loginForm" onsubmit="return loginUser()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="slide" id="dashboardSlide">
+        <h1>Welcome to the Customer Management System</h1>
+        <button onclick="showCreateSlide()">Create New Customer</button>
+        <table id="customerTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Customer data will be dynamically populated here -->
+            </tbody>
+        </table>
+        <button onclick="logoutUser()">Logout</button>
+    </div>
+
+    <div class="slide" id="createSlide">
+        <h1>Customer Management</h1>
+        <form id="customerForm" >
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <button type="submit" id="createButton" onclick="createCustomer()">Create Customer</button>
+            <button type="button" id="updateButton" onclick="updateCustomer()">Update Customer</button>
+            <button type="button" id="deleteButton" onclick="deleteCustomer()">Delete Customer</button>
+        </form>
+        <button onclick="showDashboardSlide()">Back to Customer List</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
